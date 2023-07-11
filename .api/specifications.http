@@ -1,0 +1,11 @@
+###
+GET http://localhost:3333/categories
+
+###
+POST http://localhost:3333/specifications
+Content-Type: application/json
+
+{
+  "name": "Câmbio automático",
+  "description": "Carro com câmbio automático"
+}
