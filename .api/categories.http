@@ -6,6 +6,6 @@ POST http://localhost:3333/categories
 Content-Type: application/json
 
 {
-  "name": "SUV",
-  "description": "Categoria de SUV"
+  "name": "Sedan",
+  "description": "Categoria de Sedan"
 }
