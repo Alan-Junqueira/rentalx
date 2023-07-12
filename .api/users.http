@@ -2,10 +2,13 @@
 GET http://localhost:3333/categories
 
 ###
-POST http://localhost:3333/specifications
+POST http://localhost:3333/users
 Content-Type: application/json
 
 {
-  "name": "Câmbio automático",
-  "description": "Carro com câmbio automático"
+  "name": "Alan Junqueira",
+  "username": "alan-junqueira",
+  "email": "teste@email.com",
+  "password": "1234",
+  "driverLicense": "123456"
 }
