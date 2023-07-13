@@ -12,6 +12,18 @@ Content-Type: application/json
   "driverLicense": "123456"
 }
 
+### Updte user avatar
+PATCH http://localhost:3333/users/avatar
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODkyODEzMzIsImV4cCI6MTY4OTM2NzczMiwic3ViIjoiYWUzZDk1NTgtZTE5MS00NDJkLWFjMDYtYzU0NjUxNTI4OGVmIn0.NieLGmWleC_Qf_vy4Kk2-0pmRlyrDD52lbxomyxbvTg
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="avatar"; filename="profile.png"
+Content-Type: image/png
+
+< ./profile.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
 ###
 POST http://localhost:3333/sessions
 Content-Type: application/json
@@ -20,3 +32,14 @@ Content-Type: application/json
   "email": "teste@email.com",
   "password": "1234"
 }
+
+###
+PATCH http://localhost:3333/sessions
+Content-Type: application/json
+
+{
+  "email": "teste@email.com",
+  "password": "1234"
+}
+
+
