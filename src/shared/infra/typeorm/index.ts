@@ -12,8 +12,8 @@ createConnection({
   password: "ignite",
   database: "rentx",
   entities: [Category, Specification, User],
-  migrations: ["./src/database/migrations/*.ts"],
+  migrations: ["./src/shared/infra/typeorm/migrations/*.ts"],
   cli: {
-    migrationsDir: "./src/database/migrations",
+    migrationsDir: "./src/shared/infra/typeorm/migrations",
   },
 });
