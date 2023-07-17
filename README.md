@@ -3,8 +3,6 @@
 **RF** ==> Requisitos funcionais
 
 - Deve ser possível cadastrar um novo carro.
-- Deve ser possível listar os carros disponíveis.
-- Deve ser possível listar todas as categorias.
 
 **RNF** ==> Requisitos não funcionais
 
