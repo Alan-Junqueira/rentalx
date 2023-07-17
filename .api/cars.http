@@ -1,0 +1,16 @@
+###
+GET http://localhost:3333/cars
+
+###
+POST http://localhost:3333/cars
+Content-Type: application/json
+
+{
+  "brand": "Audi",
+  "categoryId": "97a5753a-dc33-4e22-a66c-c5ee40b65cb7",
+  "dailyRate": 140,
+  "description": "Carro bonito",
+  "fineAmount": 100,
+  "licensePlate": "DEF-1212",
+  "name": "Audi A4"
+}

@@ -14,10 +14,10 @@ interface ICreateCarUseCaseRequest {
   categoryId: string
 }
 
-// @injectable()
+@injectable()
 export class CreateCarUseCase {
   constructor(
-    // @inject("CarsRepository")
+    @inject("CarsRepository")
     private carsRepository: ICarsRepository
   ) { }
 
