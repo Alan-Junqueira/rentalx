@@ -25,7 +25,8 @@ export default async (host = "database"): Promise<Connection> => {
 
   return createConnection(
     Object.assign(defaultOptions, {
-      host
+      host,
+      entities: [Category, Specification, User, Car],
     })
   )
 }

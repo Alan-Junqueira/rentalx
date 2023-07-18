@@ -14,7 +14,7 @@ import '@shared/container'
 
 dotenv.config()
 
-createConnection()
+createConnection('localhost')
 const app = express();
 
 app.use(express.json());

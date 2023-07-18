@@ -3,6 +3,7 @@ GET http://localhost:3333/cars
 
 ###
 POST http://localhost:3333/cars
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODk3MTcwOTIsImV4cCI6MTY4OTgwMzQ5Miwic3ViIjoiNzg4OWVkMWUtMWVlMy00ZmZmLWJjOTAtMmE0NmVkNmYyOGEwIn0.FF7-47Df5Q85IY2t-R9sNvumQ9QnVYFwWJHzy6r1A3I
 Content-Type: application/json
 
 {
