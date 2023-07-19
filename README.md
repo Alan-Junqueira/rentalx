@@ -11,7 +11,7 @@
 
 - Não deve ser possível cadastrar um carro com uma placa já existente.
 - O carro deve ser cadastrado, por padrão, com disponibilidade ativa.
-* O usuário responsável por cadastrar um carro, deve ser um administrador.
+- O usuário responsável por cadastrar um carro, deve ser um administrador.
 
 # Listagem de carro
 
