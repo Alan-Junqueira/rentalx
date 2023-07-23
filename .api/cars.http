@@ -1,9 +1,13 @@
 ###
 GET http://localhost:3333/cars
 
+
+### query ==> brand, name, categoryId
+GET http://localhost:3333/cars/available
+
 ###
 POST http://localhost:3333/cars
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODk3MTcwOTIsImV4cCI6MTY4OTgwMzQ5Miwic3ViIjoiNzg4OWVkMWUtMWVlMy00ZmZmLWJjOTAtMmE0NmVkNmYyOGEwIn0.FF7-47Df5Q85IY2t-R9sNvumQ9QnVYFwWJHzy6r1A3I
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTAwODQ4MzEsImV4cCI6MTY5MDE3MTIzMSwic3ViIjoiYWUzZDk1NTgtZTE5MS00NDJkLWFjMDYtYzU0NjUxNTI4OGVmIn0.cFv6l97pFaTs03cJYIXpF3gaiMl8LprqzLJvolBn0H8
 Content-Type: application/json
 
 {

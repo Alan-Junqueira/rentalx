@@ -23,7 +23,7 @@ export class InMemoryCarsRepository implements ICarsRepository {
     name
   }: IFindAvailableRequest): Promise<Car[]> {
     const cars = this.cars
-      .filter(car => car.available && ((brand && car.brand === brand) || (categoryId && car.categoryId === categoryId) || (name && car.name === name)))
+      .filter(car => car.available || ((brand && car.brand === brand) || (categoryId && car.categoryId === categoryId) || (name && car.name === name)))
 
     return cars
   }
