@@ -28,6 +28,12 @@ export class InMemoryCarsRepository implements ICarsRepository {
     return cars
   }
 
+  async findById(id: string): Promise<Car> {
+    const car = await this.cars.find(car => car.id === id)
+
+    return car
+  }
+
   async findByLicensePlate(licensePlate: string): Promise<Car> {
     const car = await this.cars.find(car => car.licensePlate === licensePlate)
 
