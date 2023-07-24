@@ -4,6 +4,7 @@ import { User } from "@modules/accounts/infra/typeorm/entities/User";
 import { Car } from "@modules/cars/infra/typeorm/entities/Car";
 import { Category } from "@modules/cars/infra/typeorm/entities/Category";
 import { Specification } from "@modules/cars/infra/typeorm/entities/Specification";
+import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 
 // createConnection({
 //   type: "postgres",
@@ -26,7 +27,7 @@ export default async (host = "database"): Promise<Connection> => {
   return createConnection(
     Object.assign(defaultOptions, {
       host,
-      entities: [Category, Specification, User, Car],
+      entities: [Category, Specification, User, Car, Rental],
     })
   )
 }

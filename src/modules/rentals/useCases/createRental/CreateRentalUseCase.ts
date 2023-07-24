@@ -26,17 +26,18 @@ export class CreateRentalUseCase {
   }: ICreateRentalUseCaseRequest): Promise<Rental> {
     const MINIMUM_HOURS = 24
     const existentActiveCarRental = await this.rentalsRepository.findOpenRentalByCar(carId)
-
+    
     if (existentActiveCarRental) {
       throw new AppError("Car is unavailable!")
     }
-
+    
+    // TODO: erro
     const rentalOpenToUser = await this.rentalsRepository.findOpenRentalByUser(userId)
 
     if (rentalOpenToUser) {
       throw new AppError("There is a rental in progress for user!")
     }
-
+    
     const dateNow = this.dateProvider.dateNow()
 
     const dateComparation = this.dateProvider.compareInHours(dateNow, expectedReturnDate)

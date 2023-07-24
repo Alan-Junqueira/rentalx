@@ -13,7 +13,7 @@ export class CarsRepository implements ICarsRepository {
   }
   
   async create(data: ICreateCarDTO): Promise<Car> {
-    const car = this.repository.create({
+    const car = await this.repository.create({
       ...data
     })
 

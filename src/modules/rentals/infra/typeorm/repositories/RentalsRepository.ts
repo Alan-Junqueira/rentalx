@@ -1,8 +1,9 @@
 import { Repository, getRepository } from "typeorm";
 
 import { ICreateRentalDTO } from "@modules/rentals/dtos/CreateRentalDTO";
-import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 import { IRentalsRepository } from "@modules/rentals/repositories/RentalsRepository";
+
+import { Rental } from "../entities/Rental";
 
 export class RentalsRepository implements IRentalsRepository {
   private repository: Repository<Rental>
@@ -31,8 +32,6 @@ export class RentalsRepository implements IRentalsRepository {
     const rental = await this.repository.findOne({
       userId
     })
-
-    await this.repository.save(rental)
 
     return rental
   }
