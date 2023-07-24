@@ -1,3 +1,4 @@
+import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental"
 import { IRentalsRepository } from "@modules/rentals/repositories/RentalsRepository"
 import { AppError } from "@shared/errors/AppError"
 
@@ -15,7 +16,7 @@ export class CreateRentalUseCase {
     carId,
     expectedReturnDate,
     userId
-  }: ICreateRentalUseCaseRequest): Promise<void> {
+  }: ICreateRentalUseCaseRequest): Promise<Rental> {
     const existentActiveCarRental = await this.rentalsRepository.findOpenRentalByCar(carId)
 
     if (existentActiveCarRental) {
@@ -28,6 +29,12 @@ export class CreateRentalUseCase {
       throw new AppError("There is a rental in progress for user!")
     }
 
+    const rental = await this.rentalsRepository.create({
+      userId,
+      carId,
+      expectedReturnDate
+    })
 
+    return rental
   }
 }
