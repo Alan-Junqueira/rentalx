@@ -28,6 +28,7 @@ export class CreateRentals1690137347850 implements MigrationInterface {
                     {
                         name: "endDate",
                         type: "timestamp",
+                        isNullable: true
                     },
                     {
                         name: "expectedReturnDate",
@@ -35,7 +36,8 @@ export class CreateRentals1690137347850 implements MigrationInterface {
                     },
                     {
                         name: "total",
-                        type: "numeric"
+                        type: "numeric",
+                        isNullable: true
                     },
                     {
                         name: "createdAt",

@@ -1,0 +1,12 @@
+### query ==> brand, name, categoryId
+GET http://localhost:3333/cars/available
+
+###
+POST http://localhost:3333/rentals
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTAxNjU2NTUsImV4cCI6MTY5MDI1MjA1NSwic3ViIjoiYWUzZDk1NTgtZTE5MS00NDJkLWFjMDYtYzU0NjUxNTI4OGVmIn0.MEXpqhPgiJXfghkvNSlbMDvKXxBnTTrNJpl1Ge28LiA
+Content-Type: application/json
+
+{
+  "expectedReturnDate": "2023-07-25T03:22:06.545Z",
+  "carId": "1894a2a9-6fff-4bab-87ef-d859ac1db0d3"
+}

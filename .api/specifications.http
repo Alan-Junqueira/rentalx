@@ -3,9 +3,10 @@ GET http://localhost:3333/categories
 
 ###
 POST http://localhost:3333/specifications
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTAxNjY4MjAsImV4cCI6MTY5MDI1MzIyMCwic3ViIjoiNzg4OWVkMWUtMWVlMy00ZmZmLWJjOTAtMmE0NmVkNmYyOGEwIn0.mVmDdukYovZVuTsNumyFvJ_RdW1m1r2XNqJE-_nhveY
 Content-Type: application/json
 
 {
-  "name": "Câmbio automático",
-  "description": "Carro com câmbio automático"
+  "name": "Câmbio manual",
+  "description": "Carro com câmbio manual"
 }

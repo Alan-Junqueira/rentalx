@@ -3,6 +3,9 @@
     "Comparation",
     "dayjs",
     "dtos",
+    "middlewares",
+    "postgres",
+    "rentx",
     "tsyringe",
     "typeorm"
   ]

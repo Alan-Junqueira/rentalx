@@ -1,3 +1,5 @@
+import { inject, injectable } from "tsyringe"
+
 import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental"
 import { IRentalsRepository } from "@modules/rentals/repositories/RentalsRepository"
 import { IDateProvider } from "@shared/container/providers/DateProvider/DateProvider"
@@ -9,12 +11,12 @@ interface ICreateRentalUseCaseRequest {
   expectedReturnDate: Date
 }
 
-const MINIMUM_HOURS = 24
-
+@injectable()
 export class CreateRentalUseCase {
-
   constructor(
+    @inject("RentalsRepository")
     private rentalsRepository: IRentalsRepository,
+    @inject("DayjsDateProvider")
     private dateProvider: IDateProvider
   ) { }
   async execute({
@@ -22,6 +24,7 @@ export class CreateRentalUseCase {
     expectedReturnDate,
     userId
   }: ICreateRentalUseCaseRequest): Promise<Rental> {
+    const MINIMUM_HOURS = 24
     const existentActiveCarRental = await this.rentalsRepository.findOpenRentalByCar(carId)
 
     if (existentActiveCarRental) {
