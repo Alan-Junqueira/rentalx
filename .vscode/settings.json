@@ -5,6 +5,7 @@
     "dtos",
     "middlewares",
     "postgres",
+    "rentalx",
     "rentx",
     "tsyringe",
     "typeorm"

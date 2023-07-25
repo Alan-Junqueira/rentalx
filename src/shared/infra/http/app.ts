@@ -37,6 +37,4 @@ app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   })
 })
 
-export {app}
-
-app.listen(process.env.PORT, () => console.log("Server is running"));
+export { app }
