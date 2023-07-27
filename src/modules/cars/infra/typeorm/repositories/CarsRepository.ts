@@ -1,7 +1,7 @@
 import { Repository, getRepository } from "typeorm";
 
 import { ICreateCarDTO } from "@modules/cars/dtos/ICreateCarDTO";
-import { ICarsRepository, IFindAvailableRequest } from "@modules/cars/repositories/ICarsRepository";
+import { ICarsRepository, IFindAvailableRequest, IUpdateAvailableRequest } from "@modules/cars/repositories/ICarsRepository";
 
 import { Car } from "../entities/Car";
 
@@ -11,7 +11,6 @@ export class CarsRepository implements ICarsRepository {
   constructor() {
     this.repository = getRepository(Car)
   }
-  
   async create(data: ICreateCarDTO): Promise<Car> {
     const car = await this.repository.create({
       ...data
@@ -58,4 +57,13 @@ export class CarsRepository implements ICarsRepository {
     return car
   }
 
+  async updateAvailable({ available, id }: IUpdateAvailableRequest): Promise<void> {
+    await this.repository
+      .createQueryBuilder()
+      .update()
+      .set({ available })
+      .where("id = :id")
+      .setParameters({ id })
+      .execute()
+  }
 }
