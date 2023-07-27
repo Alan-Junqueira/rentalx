@@ -11,11 +11,16 @@ export class RentalsRepository implements IRentalsRepository {
   constructor() {
     this.repository = getRepository(Rental)
   }
-
   async create(data: ICreateRentalDTO): Promise<Rental> {
     const rental = await this.repository.create({
       ...data
     })
+
+    return rental
+  }
+
+  async findById(id: string): Promise<Rental> {
+    const rental = await this.repository.findOne(id)
 
     return rental
   }
