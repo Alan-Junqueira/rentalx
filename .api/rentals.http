@@ -1,5 +1,6 @@
 ### query ==> brand, name, categoryId
-GET http://localhost:3333/cars/available
+GET http://localhost:3333/rentals/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTA0MjgxNDgsImV4cCI6MTY5MDUxNDU0OCwic3ViIjoiNzg4OWVkMWUtMWVlMy00ZmZmLWJjOTAtMmE0NmVkNmYyOGEwIn0.tBIJAxFXj0IQ5nOVyPR9DPoWJv5aGu9VySKSQ2QVLng
 
 ###
 POST http://localhost:3333/rentals
