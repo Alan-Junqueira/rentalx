@@ -10,3 +10,13 @@ Content-Type: application/json
   "expectedReturnDate": "2023-10-28T03:22:06.545Z",
   "carId": "1894a2a9-6fff-4bab-87ef-d859ac1db0d3"
 }
+
+###
+POST http://localhost:3333/rentals/devolution/68bae318-8057-4d16-8bdf-855fcb1f3467
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTA0MjgxNDgsImV4cCI6MTY5MDUxNDU0OCwic3ViIjoiNzg4OWVkMWUtMWVlMy00ZmZmLWJjOTAtMmE0NmVkNmYyOGEwIn0.tBIJAxFXj0IQ5nOVyPR9DPoWJv5aGu9VySKSQ2QVLng
+Content-Type: application/json
+
+{
+  "expectedReturnDate": "2023-10-28T03:22:06.545Z",
+  "carId": "1894a2a9-6fff-4bab-87ef-d859ac1db0d3"
+}

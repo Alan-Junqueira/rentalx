@@ -6,13 +6,13 @@ import { IRentalsRepository } from "@modules/rentals/repositories/RentalsReposit
 import { IDateProvider } from "@shared/container/providers/DateProvider/DateProvider"
 import { AppError } from "@shared/errors/AppError"
 
-interface IDevolutionUseCaseRequest {
+interface IDevolutionRentalUseCaseRequest {
   id: string
   userId: string
 }
 
 @injectable()
-export class DevolutionUseCase {
+export class DevolutionRentalUseCase {
   constructor(
     @inject("RentalsRepository")
     private rentalsRepository: IRentalsRepository,
@@ -22,9 +22,9 @@ export class DevolutionUseCase {
     private dateProvider: IDateProvider
   ) { }
 
-  async execute({ id, userId }: IDevolutionUseCaseRequest): Promise<Rental> {
+  async execute({ id, userId }: IDevolutionRentalUseCaseRequest): Promise<Rental> {
     const rental = await this.rentalsRepository.findById(id)
-    const car = await this.carsRepository.findById(id)
+    const car = await this.carsRepository.findById(rental.carId)
     const minimumDaily = 1
 
     if (!rental) {
