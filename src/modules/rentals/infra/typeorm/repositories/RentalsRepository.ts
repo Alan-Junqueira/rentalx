@@ -31,7 +31,8 @@ export class RentalsRepository implements IRentalsRepository {
     const rental = await this.repository.find({
       where: {
         userId
-      }
+      },
+      relations: ["car"]
     })
 
     return rental

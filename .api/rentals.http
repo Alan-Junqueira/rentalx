@@ -1,6 +1,6 @@
 ### query ==> brand, name, categoryId
 GET http://localhost:3333/rentals/user
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTA0MjgxNDgsImV4cCI6MTY5MDUxNDU0OCwic3ViIjoiNzg4OWVkMWUtMWVlMy00ZmZmLWJjOTAtMmE0NmVkNmYyOGEwIn0.tBIJAxFXj0IQ5nOVyPR9DPoWJv5aGu9VySKSQ2QVLng
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTA3NDY0NDgsImV4cCI6MTY5MDgzMjg0OCwic3ViIjoiNzg4OWVkMWUtMWVlMy00ZmZmLWJjOTAtMmE0NmVkNmYyOGEwIn0.PQpRqqQHS_Ltt6sT9n4BjOQ471zgwR0TFr9coIbp1rY
 
 ###
 POST http://localhost:3333/rentals
