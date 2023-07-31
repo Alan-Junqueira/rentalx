@@ -6,6 +6,7 @@ import { Category } from "@modules/cars/infra/typeorm/entities/Category";
 import { Specification } from "@modules/cars/infra/typeorm/entities/Specification";
 import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 
+
 // createConnection({
 //   type: "postgres",
 //   port: 5432,
@@ -13,7 +14,7 @@ import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 //   username: "docker",
 //   password: "ignite",
 //   database: "rentx",
-//   entities: [Category, Specification, User, Car],
+//   entities: [Category, Specification, User, Car, Rental],
 //   migrations: ["./src/shared/infra/typeorm/migrations/*.ts"],
 //   cli: {
 //     migrationsDir: "./src/shared/infra/typeorm/migrations",
