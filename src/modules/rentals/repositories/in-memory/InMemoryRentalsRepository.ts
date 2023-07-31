@@ -9,14 +9,26 @@ export class InMemoryRentalsRepository implements IRentalsRepository {
   async create(data: ICreateRentalDTO): Promise<Rental> {
     const rental = new Rental()
 
-    Object.assign(rental, { 
+    Object.assign(rental, {
       ...data,
       startDate: new Date()
-     })
+    })
 
     this.rentals.push(rental)
 
     return rental
+  }
+
+  async findById(id: string): Promise<Rental> {
+    const rental = this.rentals.find(rental => rental.id === id)
+
+    return rental
+  }
+
+  async findByUser(userId: string): Promise<Rental[]> {
+    const rentals = this.rentals.filter(rental => rental.userId === userId)
+
+    return rentals
   }
 
   async findOpenRentalByCar(carId: string): Promise<Rental> {

@@ -19,9 +19,9 @@ describe("Create car specification", () => {
     const carId = "1234"
     const specificationsId = ["54321"]
 
-    expect(async () => {
-      await sut.execute({ carId, specificationsId })
-    }).rejects.toBeInstanceOf(AppError)
+    await expect(
+      sut.execute({ carId, specificationsId })
+    ).rejects.toEqual(new AppError("Car does not exists!"))
   })
 
   it("should be able to add a new specification car", async () => {

@@ -31,12 +31,10 @@ describe("Create Category", () => {
       description: "Category description Test"
     }
 
-    expect(async () => {
-      await sut.execute(category)
-      await sut.execute(category)
-
-      await imMemoryCategoriesRepository.findByName(category.name)
-    }).rejects.toBeInstanceOf(AppError)
+    await sut.execute(category)
+    await expect(
+      sut.execute(category)
+    ).rejects.toEqual(new AppError("Category already exists!"))
 
   })
 })

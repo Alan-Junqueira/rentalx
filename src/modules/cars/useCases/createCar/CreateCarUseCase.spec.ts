@@ -28,17 +28,18 @@ describe("Create car", () => {
   })
 
   it("should not be able to create a new car with existent license plate", async () => {
-    expect(async () => {
-      await sut.execute({
-        brand: "Brand",
-        categoryId: "Category",
-        dailyRate: 100,
-        description: "Description car",
-        fineAmount: 60,
-        licensePlate: "ABC-1234",
-        name: "Car 1"
-      })
-      await sut.execute({
+    await sut.execute({
+      brand: "Brand",
+      categoryId: "Category",
+      dailyRate: 100,
+      description: "Description car",
+      fineAmount: 60,
+      licensePlate: "ABC-1234",
+      name: "Car 1"
+    })
+
+    await expect(
+      sut.execute({
         brand: "Brand",
         categoryId: "Category",
         dailyRate: 100,
@@ -47,7 +48,7 @@ describe("Create car", () => {
         licensePlate: "ABC-1234",
         name: "Car 2"
       })
-    }).rejects.toBeInstanceOf(AppError)
+    ).rejects.toEqual(new AppError("Car already exists!"))
   })
 
   it("should be able to create a new car with available tru, by default", async () => {
