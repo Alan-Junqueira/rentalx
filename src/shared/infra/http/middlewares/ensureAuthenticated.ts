@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express"
 import { verify } from "jsonwebtoken"
 
+import { authConfig } from "@config/auth"
 import { UsersRepository } from "@modules/accounts/infra/typeorm/repositories/UsersRepository"
 import { AppError } from "@shared/errors/AppError"
 
@@ -19,7 +20,7 @@ export const ensureAuthenticated = async (req: Request, res: Response, next: Nex
   const [, token] = authHeader.split(" ")
 
   try {
-    const { sub } = verify(token, process.env.JWT_SECRET) as IPayload
+    const { sub } = verify(token, authConfig.secretToken) as IPayload
 
     const usersRepository = new UsersRepository()
     const user = await usersRepository.findById(sub)
