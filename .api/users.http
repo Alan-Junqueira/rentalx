@@ -14,7 +14,7 @@ Content-Type: application/json
 
 ### Updte user avatar
 PATCH http://localhost:3333/users/avatar
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODkyODEzMzIsImV4cCI6MTY4OTM2NzczMiwic3ViIjoiYWUzZDk1NTgtZTE5MS00NDJkLWFjMDYtYzU0NjUxNTI4OGVmIn0.NieLGmWleC_Qf_vy4Kk2-0pmRlyrDD52lbxomyxbvTg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTEwMDE0ODksImV4cCI6MTY5MTAwMjM4OSwic3ViIjoiNzg4OWVkMWUtMWVlMy00ZmZmLWJjOTAtMmE0NmVkNmYyOGEwIn0.P9SNMYpMLs7LgAXn1PbRHgTF7UOZFmckftMER51P8Iw
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
