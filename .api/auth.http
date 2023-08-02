@@ -1,0 +1,29 @@
+###
+POST http://localhost:3333/sessions
+Content-Type: application/json
+
+{
+  "email": "teste@email.com",
+  "password": "1234"
+}
+
+###
+POST http://localhost:3333/sessions
+Content-Type: application/json
+
+{
+  "email": "admin@email.com",
+  "password": "admin"
+}
+
+
+
+###
+POST http://localhost:3333/refresh-token
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImlhdCI6MTY5MDk0NTc1MSwiZXhwIjoxNjkzNTM3NzUxLCJzdWIiOiI3ODg5ZWQxZS0xZWUzLTRmZmYtYmM5MC0yYTQ2ZWQ2ZjI4YTAifQ.LXunpzdRAbDf8gLkHKpeMrWQg51ZfBF3IJhpwov5Zy0"
+}
+
+

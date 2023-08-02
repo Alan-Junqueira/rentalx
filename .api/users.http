@@ -24,31 +24,4 @@ Content-Type: image/png
 < ./profile.png
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
 
-###
-POST http://localhost:3333/sessions
-Content-Type: application/json
-
-{
-  "email": "teste@email.com",
-  "password": "1234"
-}
-
-###
-POST http://localhost:3333/sessions
-Content-Type: application/json
-
-{
-  "email": "admin@email.com",
-  "password": "admin"
-}
-
-###
-PATCH http://localhost:3333/sessions
-Content-Type: application/json
-
-{
-  "email": "teste@email.com",
-  "password": "1234"
-}
-
 
