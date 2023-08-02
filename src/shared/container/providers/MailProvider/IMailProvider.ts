@@ -1,7 +1,8 @@
 export interface ISendMail {
   to: string
   subject: string
-  body: string
+  variables: unknown
+  path: string
 }
 
 export interface IMailProvider {
