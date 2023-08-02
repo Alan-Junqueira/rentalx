@@ -30,3 +30,17 @@ Content-Type: application/json
     "2db1751a-3de9-4b09-b164-1205992d74b5"
   ]
 }
+
+### Bearer token admin
+POST http://localhost:3333/cars/images/1894a2a9-6fff-4bab-87ef-d859ac1db0d3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTEwMDM1NjMsImV4cCI6MTY5MTAwNDQ2Mywic3ViIjoiNzg4OWVkMWUtMWVlMy00ZmZmLWJjOTAtMmE0NmVkNmYyOGEwIn0.ja8OJJ0hupwVDYckTe47cHaPd-geiJpkk_RK2HeNgDY
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="images"; filename="profile.png"
+Content-Type: image/png
+
+< ./profile.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+

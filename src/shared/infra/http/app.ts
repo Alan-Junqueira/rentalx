@@ -4,6 +4,7 @@ import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors"
 import swaggerUi from "swagger-ui-express";
 
+import { uploadConfig } from "@config/upload";
 import { AppError } from "@shared/errors/AppError";
 import createConnection from "@shared/infra/typeorm";
 
@@ -20,6 +21,9 @@ const app = express();
 app.use(express.json());
 
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
+app.use('/avatar', express.static(`${uploadConfig.tmpFolder}/avatar`))
+app.use('/cars', express.static(`${uploadConfig.tmpFolder}/cars`))
 
 app.use(router);
 

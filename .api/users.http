@@ -1,5 +1,6 @@
 ###
-GET http://localhost:3333/categories
+GET http://localhost:3333/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTEwMDU2OTYsImV4cCI6MTY5MTAwNjU5Niwic3ViIjoiNzg4OWVkMWUtMWVlMy00ZmZmLWJjOTAtMmE0NmVkNmYyOGEwIn0._20uxLV3QSPBfty_s9gtW9PgILso-VqvDEHLnsCLR3w
 
 ###
 POST http://localhost:3333/users
@@ -14,7 +15,7 @@ Content-Type: application/json
 
 ### Updte user avatar
 PATCH http://localhost:3333/users/avatar
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTEwMDI3MjMsImV4cCI6MTY5MTAwMzYyMywic3ViIjoiNzg4OWVkMWUtMWVlMy00ZmZmLWJjOTAtMmE0NmVkNmYyOGEwIn0.7H9OFQs3KjhP8okjoaJnLINxXOx-JTXGZ1_f1UdSBWY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTEwMDU2OTYsImV4cCI6MTY5MTAwNjU5Niwic3ViIjoiNzg4OWVkMWUtMWVlMy00ZmZmLWJjOTAtMmE0NmVkNmYyOGEwIn0._20uxLV3QSPBfty_s9gtW9PgILso-VqvDEHLnsCLR3w
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
