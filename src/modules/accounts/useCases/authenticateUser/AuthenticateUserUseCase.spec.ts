@@ -2,6 +2,8 @@ import dotenv from "dotenv"
 
 import { ICreateUserDTO } from "@modules/accounts/dtos/ICreateUserDTO"
 import { InMemoryUsersRepository } from "@modules/accounts/repositories/in-memory/InMemoryUsersRepository"
+import { InMemoryUserTokensRepository } from "@modules/accounts/repositories/in-memory/InMemoryUserTokensRepository"
+import { DayjsDateProvider } from "@shared/container/providers/DateProvider/implementations/DayjsDateProvider"
 import { AppError } from "@shared/errors/AppError"
 
 import { CreateUserUseCase } from "../createUser/CreateUserUseCase"
@@ -10,14 +12,18 @@ import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase"
 dotenv.config()
 
 let inMemoryUsersRepository: InMemoryUsersRepository
+let inMemoryUserTokensRepository: InMemoryUserTokensRepository
 let createUserUseCase: CreateUserUseCase
+let dateProvider: DayjsDateProvider
 let sut: AuthenticateUserUseCase
 
 describe("Authenticate User", () => {
   beforeEach(() => {
     inMemoryUsersRepository = new InMemoryUsersRepository()
+    inMemoryUserTokensRepository = new InMemoryUserTokensRepository()
+    dateProvider = new DayjsDateProvider()
     createUserUseCase = new CreateUserUseCase(inMemoryUsersRepository)
-    sut = new AuthenticateUserUseCase(inMemoryUsersRepository)
+    sut = new AuthenticateUserUseCase(inMemoryUsersRepository, inMemoryUserTokensRepository, dateProvider)
   })
 
   it("Should be able to authenticate a user", async () => {

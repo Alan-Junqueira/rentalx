@@ -26,7 +26,7 @@ export class SendForgotPasswordMailUseCase {
     const templatePath = path.resolve(__dirname, "..", "..", "views", "emails", "forgotPassword.hbs")
 
     if (!user) {
-      throw new AppError("User doesn't exists")
+      throw new AppError("User doesn't exists!")
     }
 
     const token = uuidV4()

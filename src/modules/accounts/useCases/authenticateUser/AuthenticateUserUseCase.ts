@@ -49,7 +49,6 @@ export class AuthenticateUserUseCase {
       subject: user.id,
       expiresIn: authConfig.expiresInToken
     })
-    console.log(token)
 
     const refreshToken = sign({ email }, authConfig.secretRefreshToken, {
       subject: user.id,

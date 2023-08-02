@@ -8,8 +8,8 @@ export interface IFindByUserIdAndRefreshTokenRequest {
 
 export interface IUserTokensRepository {
   create(data: ICreateUserTokenDTO): Promise<UserTokens>
+  deleteById(id: string): Promise<void>
   findByUserId(userId: string): Promise<Array<UserTokens>>
   findByRefreshToken(refreshToken: string): Promise<UserTokens>
   findByUserIdAndRefreshToken(data: IFindByUserIdAndRefreshTokenRequest): Promise<UserTokens>
-  deleteById(id: string): Promise<void>
 }
