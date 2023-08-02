@@ -14,6 +14,10 @@ export class DayjsDateProvider implements IDateProvider {
     return dayjs().add(hours, "hour").toDate()
   }
 
+  compareIfBefore(startDate: Date, endDate: Date): boolean {
+    return dayjs(startDate).isBefore(endDate)
+  }
+
   compareInDays(startDate: Date, endDate: Date): number {
     const endDateUtc = this.convertToUTC(endDate)
     const startDateUtc = this.convertToUTC(startDate)
