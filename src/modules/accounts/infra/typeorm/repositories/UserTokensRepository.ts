@@ -1,7 +1,7 @@
 import { Repository, getRepository } from "typeorm";
 
 import { ICreateUserTokenDTO } from "@modules/accounts/dtos/ICreateUserTokenDTO";
-import { IUserTokensRepository } from "@modules/accounts/repositories/IUsersTokensRepository";
+import { IFindByUserIdAndRefreshTokenRequest, IUserTokensRepository } from "@modules/accounts/repositories/IUsersTokensRepository";
 
 import { UserTokens } from "../entities/UserTokens";
 
@@ -20,4 +20,25 @@ export class UserTokensRepository implements IUserTokensRepository {
     return userToken
   }
 
+  async deleteById(id: string): Promise<void> {
+    await this.repository.delete(id)
+  }
+
+  async findByUserId(userId: string): Promise<UserTokens[]> {
+    const userTokens = await this.repository.find({
+      where: {
+        userId
+      }
+    })
+
+    return userTokens
+  }
+
+  async findByUserIdAndRefreshToken(data: IFindByUserIdAndRefreshTokenRequest): Promise<UserTokens> {
+    const userToken = await this.repository.findOne({
+      where: data
+    })
+
+    return userToken
+  }
 }
