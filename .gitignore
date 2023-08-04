@@ -1,7 +1,8 @@
 node_modules
-
 .env
-tmp
-
+tmp/*
 *.png
 dist
+ormconfig.json
+
+!tmp/.gitkeep
