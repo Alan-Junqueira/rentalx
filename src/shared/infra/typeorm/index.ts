@@ -8,7 +8,6 @@ import { Category } from "@modules/cars/infra/typeorm/entities/Category";
 import { Specification } from "@modules/cars/infra/typeorm/entities/Specification";
 import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 
-
 // createConnection({
 //   type: "postgres",
 //   port: 5432,
@@ -23,15 +22,16 @@ import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 //   },
 // });
 
-
-export default async (host = "rentalx-pg-db"): Promise<Connection> => {
-  const defaultOptions = await getConnectionOptions()
+export default async (): Promise<Connection> => {
+  const defaultOptions = await getConnectionOptions();
 
   return createConnection(
     Object.assign(defaultOptions, {
-      host,
-      entities: [Category, Specification, User, Car, Rental, UserTokens, CarImage],
-      database: process.env.NODE_ENV === "test" ? "rentx_test" : defaultOptions.database
+      // entities: ["./src/modules/**/infra/typeorm/entities/*.ts"],
+      database:
+        process.env.NODE_ENV === "test"
+          ? "rentx_test"
+          : defaultOptions.database,
     })
-  )
-}
+  );
+};
