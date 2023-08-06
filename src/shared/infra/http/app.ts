@@ -6,14 +6,15 @@ import express, { NextFunction, Request, Response } from "express";
 import swaggerUi from "swagger-ui-express";
 
 import { uploadConfig } from "@config/upload";
+import * as Sentry from "@sentry/node";
 import { AppError } from "@shared/errors/AppError";
 import createConnection from "@shared/infra/typeorm";
 
 import swaggerFile from "../../../swagger.json";
+import { rateLimiter } from "./middlewares/rateLimiter";
 import { router } from "./routes";
 
 import "@shared/container";
-import { rateLimiter } from "./middlewares/rateLimiter";
 
 dotenv.config();
 
@@ -21,6 +22,23 @@ createConnection();
 const app = express();
 
 app.use(rateLimiter);
+
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  integrations: [
+    new Sentry.Integrations.Http({
+      tracing: true,
+    }),
+    new Sentry.Integrations.Express({
+      app,
+    }),
+  ],
+  tracesSampleRate: 1.0,
+});
+
+// Trace incoming requests
+app.use(Sentry.Handlers.requestHandler());
+app.use(Sentry.Handlers.tracingHandler());
 
 app.use(express.json());
 
@@ -32,6 +50,8 @@ app.use("/cars", express.static(`${uploadConfig.tmpFolder}/cars`));
 app.use(cors());
 
 app.use(router);
+
+app.use(Sentry.Handlers.errorHandler());
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
