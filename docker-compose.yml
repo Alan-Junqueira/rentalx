@@ -12,6 +12,13 @@ services:
     volumes:
       - pgdata:/data/postgres
     network_mode: host
+
+  redis:
+    image: redis:alpine
+    container_name: redis_rentx
+    ports:
+      - 6379:6379
+
   app:
     build: .
     ports:

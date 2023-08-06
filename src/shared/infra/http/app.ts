@@ -13,11 +13,14 @@ import swaggerFile from "../../../swagger.json";
 import { router } from "./routes";
 
 import "@shared/container";
+import { rateLimiter } from "./middlewares/rateLimiter";
 
 dotenv.config();
 
 createConnection();
 const app = express();
+
+app.use(rateLimiter);
 
 app.use(express.json());
 
