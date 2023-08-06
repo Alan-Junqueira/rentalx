@@ -10,7 +10,7 @@ let connection: Connection
 
 describe("List Category Controller", () => {
   beforeAll(async () => {
-    connection = await createConnection("localhost")
+    connection = await createConnection()
     await connection.runMigrations()
 
     const id = uuidV4()

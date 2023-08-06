@@ -13,6 +13,17 @@ Content-Type: application/json
   "driverLicense": "123456"
 }
 
+###
+POST http://15.229.9.117/users
+Content-Type: application/json
+
+{
+  "name": "Alan Junqueira",
+  "email": "teste@email.com",
+  "password": "1234",
+  "driverLicense": "123456"
+}
+
 ### Updte user avatar
 PATCH http://localhost:3333/users/avatar
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTEwMDU2OTYsImV4cCI6MTY5MTAwNjU5Niwic3ViIjoiNzg4OWVkMWUtMWVlMy00ZmZmLWJjOTAtMmE0NmVkNmYyOGEwIn0._20uxLV3QSPBfty_s9gtW9PgILso-VqvDEHLnsCLR3w

@@ -1,12 +1,12 @@
 import { Connection, createConnection, getConnectionOptions } from "typeorm";
 
-import { User } from "@modules/accounts/infra/typeorm/entities/User";
-import { UserTokens } from "@modules/accounts/infra/typeorm/entities/UserTokens";
-import { Car } from "@modules/cars/infra/typeorm/entities/Car";
-import { CarImage } from "@modules/cars/infra/typeorm/entities/CarImage";
-import { Category } from "@modules/cars/infra/typeorm/entities/Category";
-import { Specification } from "@modules/cars/infra/typeorm/entities/Specification";
-import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
+// import { User } from "@modules/accounts/infra/typeorm/entities/User";
+// import { UserTokens } from "@modules/accounts/infra/typeorm/entities/UserTokens";
+// import { Car } from "@modules/cars/infra/typeorm/entities/Car";
+// import { CarImage } from "@modules/cars/infra/typeorm/entities/CarImage";
+// import { Category } from "@modules/cars/infra/typeorm/entities/Category";
+// import { Specification } from "@modules/cars/infra/typeorm/entities/Specification";
+// import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 
 // createConnection({
 //   type: "postgres",
